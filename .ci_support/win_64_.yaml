@@ -1,0 +1,18 @@
+c_compiler:
+- vs2019
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2019
+glew:
+- '2.1'
+libpng:
+- '1.6'
+target_platform:
+- win-64
+zstd:
+- '1.5'

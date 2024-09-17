@@ -7,7 +7,6 @@ cmake $SRC_DIR \
     -G Ninja \
     -B build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR="lib" \
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_TESTS=ON \
     -DBUILD_TOOLS=OFF
