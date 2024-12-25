@@ -10,7 +10,7 @@ source:
   sha256: 348f5c082d69afbb74b1af022d193cc0018ef8032a39409eb3f99c4ac2dd4b1e
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -23,18 +23,6 @@ requirements:
     - catch2
     - cmake
     - pkg-config  
-    - {{ cdt('libglvnd-egl') }}       # [linux]
-    - {{ cdt('libglvnd-devel') }}     # [linux]
-    - {{ cdt('mesa-libgl-devel') }}   # [linux]
-    - {{ cdt('mesa-libegl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}   # [linux]
-    - {{ cdt('libselinux') }}         # [linux]
-    - {{ cdt('libxdamage') }}         # [linux]
-    - {{ cdt('libxfixes') }}          # [linux]
-    - {{ cdt('libxxf86vm') }}         # [linux]
-    - {{ cdt('libxext') }}            # [linux]
-    - {{ cdt('libxau') }}             # [linux]
-    - {{ cdt('libxcb') }}             # [linux]
     - xorg-libx11
     - xorg-libxext
     - xorg-libxfixes
@@ -42,6 +30,8 @@ requirements:
     - eigen
     - epoxy
     - glew
+    - libgl-devel  # [linux]
+    - libglu       # [linux]
     - libpng
     - libxkbcommon       # [linux]
     - wayland            # [linux]
