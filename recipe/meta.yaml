@@ -23,8 +23,6 @@ requirements:
     - catch2
     - cmake
     - pkg-config  
-    - libgl-devel  # [linux]
-    - libglu       # [linux]
     - xorg-libx11
     - xorg-libxext
     - xorg-libxfixes
@@ -32,6 +30,8 @@ requirements:
     - eigen
     - epoxy
     - glew
+    - libgl-devel  # [linux]
+    - libglu       # [linux]
     - libpng
     - libxkbcommon       # [linux]
     - wayland            # [linux]
