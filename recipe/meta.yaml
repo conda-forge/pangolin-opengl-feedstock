@@ -22,8 +22,6 @@ requirements:
     - ninja
     - catch2
     - cmake
-    - libgl-devel  # [linux]
-    - libglu       # [linux]
     - pkg-config  
     - xorg-libx11
     - xorg-libxext
@@ -32,8 +30,9 @@ requirements:
     - eigen
     - epoxy
     - glew
-    - libgl-devel  # [linux]
-    - libglu       # [linux]
+    - libegl-devel  # [linux]
+    - libgl-devel   # [linux]
+    - libglu        # [linux]
     - libpng
     - libxkbcommon       # [linux]
     - wayland            # [linux]
