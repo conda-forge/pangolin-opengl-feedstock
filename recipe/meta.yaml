@@ -22,6 +22,8 @@ requirements:
     - ninja
     - catch2
     - cmake
+    - libgl-devel  # [linux]
+    - libglu       # [linux]
     - pkg-config  
     - xorg-libx11
     - xorg-libxext
