@@ -23,9 +23,6 @@ requirements:
     - catch2
     - cmake
     - pkg-config  
-    - xorg-libx11
-    - xorg-libxext
-    - xorg-libxfixes
   host:
     - eigen
     - epoxy
@@ -37,6 +34,9 @@ requirements:
     - libxkbcommon       # [linux]
     - wayland            # [linux]
     - wayland-protocols  # [linux] 
+    - xorg-libx11        # [linux] 
+    - xorg-libxext       # [linux] 
+    - xorg-libxfixes     # [linux] 
     - zstd
   run:
     - xorg-libx11
