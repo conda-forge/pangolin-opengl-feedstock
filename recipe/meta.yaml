@@ -1,5 +1,5 @@
 {% set name = "pangolin-opengl" %}
-{% set version = "0.9.2" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/stevenlovegrove/Pangolin/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 348f5c082d69afbb74b1af022d193cc0018ef8032a39409eb3f99c4ac2dd4b1e
+  sha256: fb95a354dc64bb151881192703db461a59089f7bcdb2c2c9185cfb5393586d97
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -22,7 +22,7 @@ requirements:
     - ninja
     - catch2
     - cmake
-    - pkg-config  
+    - pkg-config
     - {{ cdt('libglvnd-egl') }}       # [linux]
     - {{ cdt('libglvnd-devel') }}     # [linux]
     - {{ cdt('mesa-libgl-devel') }}   # [linux]
