@@ -39,13 +39,14 @@ requirements:
     - eigen
     - epoxy
     - glew
+    - libglu             # [linux]
     - libpng
     - libxkbcommon       # [linux]
     - wayland            # [linux]
     - wayland-protocols  # [linux]
-    - xorg-libx11
-    - xorg-libxext
-    - xorg-libxfixes
+    - xorg-libx11        # [linux]
+    - xorg-libxext       # [linux]
+    - xorg-libxfixes     # [linux]
     - zstd
   run:
     - xorg-libx11
