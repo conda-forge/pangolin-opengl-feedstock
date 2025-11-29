@@ -38,10 +38,12 @@ requirements:
     - catch2
     - eigen
     - epoxy
+    - fmt
     - glew
     - libglu             # [linux]
     - libpng
     - libxkbcommon       # [linux]
+    - spdlog
     - xorg-libx11        # [linux]
     - xorg-libxext       # [linux]
     - xorg-libxfixes     # [linux]
