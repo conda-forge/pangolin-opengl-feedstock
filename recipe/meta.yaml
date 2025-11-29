@@ -42,8 +42,6 @@ requirements:
     - libglu             # [linux]
     - libpng
     - libxkbcommon       # [linux]
-    - wayland            # [linux]
-    - wayland-protocols  # [linux]
     - xorg-libx11        # [linux]
     - xorg-libxext       # [linux]
     - xorg-libxfixes     # [linux]
