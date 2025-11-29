@@ -34,9 +34,6 @@ requirements:
     - {{ cdt('libxext') }}            # [linux]
     - {{ cdt('libxau') }}             # [linux]
     - {{ cdt('libxcb') }}             # [linux]
-    - xorg-libx11
-    - xorg-libxext
-    - xorg-libxfixes
   host:
     - catch2
     - eigen
@@ -46,6 +43,9 @@ requirements:
     - libxkbcommon       # [linux]
     - wayland            # [linux]
     - wayland-protocols  # [linux]
+    - xorg-libx11
+    - xorg-libxext
+    - xorg-libxfixes
     - zstd
   run:
     - xorg-libx11
