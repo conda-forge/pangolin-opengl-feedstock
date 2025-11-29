@@ -31,6 +31,7 @@ requirements:
     - libegl-devel       # [linux]
     - libgl-devel        # [linux]
     - libglu             # [linux]
+    - libopengl-devel    # [linux]
     - libpng
     - libxkbcommon       # [linux]
     - spdlog
