@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euxo pipefail
+set -exo pipefail
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
   BUILD_TESTS=ON
