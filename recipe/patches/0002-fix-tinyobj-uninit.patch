@@ -1,0 +1,11 @@
+--- components/tinyobj/include/tinyobj/tiny_obj_loader.h
++++ components/tinyobj/include/tinyobj/tiny_obj_loader.h
+@@ -436,7 +436,7 @@
+   int pad_;
+   std::vector<vertex_index_t> vertex_indices;  // face vertex indices.
+
+-  face_t() : smoothing_group_id(0) {}
++  face_t() : smoothing_group_id(0), pad_(0) {}
+ };
+
+ struct line_t {
