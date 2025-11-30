@@ -9,13 +9,13 @@ channel_targets:
 cxx_compiler:
 - vs2022
 fmt:
-- '11.2'
+- '12.0'
 glew:
 - '2.2'
 libpng:
 - '1.6'
 spdlog:
-- '1.15'
+- '1.16'
 target_platform:
 - win-64
 zstd:
