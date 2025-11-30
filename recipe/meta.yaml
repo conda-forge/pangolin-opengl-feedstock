@@ -11,9 +11,6 @@ source:
   patches:
     - patches/0001-remove-werror.patch
     - patches/0002-fix-tinyobj-uninit.patch
-  patches:
-    - patches/0001-remove-werror.patch
-    - patches/0002-fix-tinyobj-uninit.patch
 
 build:
   number: 0

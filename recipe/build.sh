@@ -25,6 +25,3 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
 fi
 
 cmake --build build --parallel --target install
-# Force change
-# Force change
-# Force change
