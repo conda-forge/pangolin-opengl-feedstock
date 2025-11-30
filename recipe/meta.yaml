@@ -1,5 +1,5 @@
 {% set name = "pangolin-opengl" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/stevenlovegrove/Pangolin/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4c57edfa7a380afa12565c1c2a3b6a61824769c11eedfca7bfa090e5cf8c1366
+  sha256: fb95a354dc64bb151881192703db461a59089f7bcdb2c2c9185cfb5393586d97
   patches:
     - patches/0001-remove-werror.patch
     - patches/0002-fix-tinyobj-uninit.patch
