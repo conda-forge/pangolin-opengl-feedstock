@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 fmt:
-- '12.0'
+- '12.1'
 glew:
 - '2.3'
 libpng:
@@ -27,7 +27,7 @@ libpng:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 spdlog:
-- '1.16'
+- '1.17'
 target_platform:
 - osx-64
 zip_keys:
