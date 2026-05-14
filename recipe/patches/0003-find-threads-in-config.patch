@@ -1,0 +1,15 @@
+diff --git a/cmake/PangolinConfig.cmake.in b/cmake/PangolinConfig.cmake.in
+index 1625ce2..018bbbe 100644
+--- a/cmake/PangolinConfig.cmake.in
++++ b/cmake/PangolinConfig.cmake.in
+@@ -8,9 +8,7 @@ SET( Pangolin_LIBRARY      "${Pangolin_LIBRARIES}" )
+ include(CMakeFindDependencyMacro)
+ find_dependency(Eigen3)
+ 
+-if (UNIX)
+-  find_dependency(Threads)
+-endif()
++find_dependency(Threads)
+ 
+ if (NOT EMSCRIPTEN)
+     find_dependency(OpenGL REQUIRED COMPONENTS OpenGL)
