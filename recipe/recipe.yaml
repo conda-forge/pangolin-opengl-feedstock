@@ -1,0 +1,115 @@
+schema_version: 1
+
+context:
+  name: pangolin-opengl
+  version: "0.9.5"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/stevenlovegrove/Pangolin/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: b4fa363e68d076bec70b48f9aaa176575e399033f93b705c795dd36a7ea24919
+  patches:
+    - patches/0001-remove-werror.patch
+    - patches/0002-fix-tinyobj-uninit.patch
+    - patches/0003-find-threads-in-config.patch
+
+build:
+  number: 2
+  script:
+    - if: unix
+      then: bash "${RECIPE_DIR}/build.sh"
+    - if: win
+      then: call "%RECIPE_DIR%\\build.bat"
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - ninja
+    - cmake
+    - pkg-config
+  host:
+    - catch2
+    - eigen
+    - epoxy
+    - fmt
+    - glew
+    - if: linux
+      then: libegl-devel
+    - if: linux
+      then: libgl-devel
+    - if: linux
+      then: libglu
+    - if: linux
+      then: libglvnd-devel
+    - if: linux
+      then: libglx-devel
+    - if: linux
+      then: libopengl-devel
+    - libpng
+    - if: linux
+      then: libxkbcommon
+    - spdlog
+    - if: linux
+      then: xorg-libx11
+    - if: linux
+      then: xorg-libxext
+    - if: linux
+      then: xorg-libxfixes
+    - zstd
+  run:
+    - xorg-libx11
+    - zstd
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - files:
+      recipe:
+        - tests/
+    requirements:
+      run:
+        - ${{ compiler('cxx') }}
+        - ${{ stdlib('c') }}
+        - cmake
+        - eigen
+        - if: linux
+          then: libegl-devel
+        - if: linux
+          then: libgl-devel
+        - if: linux
+          then: libopengl-devel
+        - if: not win
+          then: ninja
+    script:
+      - if: not win
+        then: test -f $PREFIX/lib/cmake/Pangolin/PangolinConfig.cmake
+      - if: not win
+        then: cmake -S tests -B tests/build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PREFIX
+      - if: not win
+        then: cmake --build tests/build --config Release
+      - if: not win
+        then: ctest --test-dir tests/build --output-on-failure
+      - if: win
+        then: if not exist %PREFIX%\\Library\\lib\\cmake\\Pangolin\\PangolinConfig.cmake exit 1
+      - if: win
+        then: cmake -S tests -B tests\\build -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX%
+      - if: win
+        then: cmake --build tests\\build --config Release
+      - if: win
+        then: ctest --test-dir tests\\build --output-on-failure -C Release
+
+about:
+  license: MIT
+  license_file: LICENCE
+  summary: Pangolin - A set of lightweight and portable utility libraries for prototyping 3D, numeric or video based programs and algorithms.
+  homepage: https://github.com/stevenlovegrove/Pangolin.git
+  repository: https://github.com/stevenlovegrove/Pangolin
+
+extra:
+  recipe-maintainers:
+    - jeongseok-meta
